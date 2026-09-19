@@ -4,11 +4,6 @@ public class Main {
     public static void main(String[] args) {
 
         Lampadina l;
-        l = new Lampadina();
-        l.potenza = 30;
-
-
-        Lampadina b;
-        b = new Lampadina(10 )
+        l = new Lampadina(50, rosso, 5, true, luce);
     }
 }

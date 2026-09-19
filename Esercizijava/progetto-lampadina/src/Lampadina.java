@@ -1,10 +1,11 @@
+
 public class Lampadina {
 
     int potenza;
-    String colore;
+    public String colore;
     int intensita;
     boolean accesa;
-    String nome;
+    public String nome;
 
 
 
@@ -60,5 +61,8 @@ public class Lampadina {
     }
 
 
-
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
