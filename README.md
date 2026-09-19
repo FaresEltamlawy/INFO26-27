@@ -1,2 +1,8 @@
 # INFO26-27
-Repository di informatica per esercizi su Java e altro
+
+Repository per gli esercizi
+
+## Primo esercizio
+
+in questo **primo** esercizio
+
