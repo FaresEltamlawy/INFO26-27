@@ -4,5 +4,5 @@ Repository per gli esercizi
 
 ## Primo esercizio
 
-in questo **primo** esercizio
+in questo **primo** esercizio modifichiamo il README.md
 
