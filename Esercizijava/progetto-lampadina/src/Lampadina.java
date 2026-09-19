@@ -7,10 +7,6 @@ public class Lampadina {
     boolean accesa;
     public String nome;
 
-
-
-
-
     public Lampadina(int potenza, String colore, int intensita, boolean accesa, String nome) {
         this.potenza = potenza;
         this.colore = colore;
@@ -18,7 +14,6 @@ public class Lampadina {
         this.accesa = accesa;
         this.nome = nome;
     }
-
 
     public int getPotenza() {
         return potenza;
