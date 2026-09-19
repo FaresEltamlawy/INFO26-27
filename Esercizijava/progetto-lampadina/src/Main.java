@@ -6,5 +6,9 @@ public class Main {
         Lampadina l;
         l = new Lampadina();
         l.potenza = 30;
+
+
+        Lampadina b;
+        b = new Lampadina(10 )
     }
 }
