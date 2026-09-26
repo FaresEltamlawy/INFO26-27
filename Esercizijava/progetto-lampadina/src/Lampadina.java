@@ -1,26 +1,36 @@
+public class LampadinaIntelligente {
 
-public class Lampadina {
+    private int potenza;            // in Watt
+    private int illuminazione;      // 0 - 100
+    private String colore;          // es. "bianco"
+    private String nome;            // nome assegnato nel sistema
+    private boolean accesa;         // stato
 
-    int potenza;
-    public String colore;
-    int intensita;
-    boolean accesa;
-    public String nome;
-
-    public Lampadina(int potenza, String colore, int intensita, boolean accesa, String nome) {
+    // Costruttore
+    public LampadinaIntelligente(int potenza) {
         this.potenza = potenza;
-        this.colore = colore;
-        this.intensita = intensita;
-        this.accesa = accesa;
+        this.illuminazione = 50;
+        this.colore = "bianco";
+        this.nome = "";
+        this.accesa = false;
+    }
+
+    // Costruttore di copia
+    public LampadinaIntelligente(LampadinaIntelligente altra) {
+        this.potenza = altra.potenza;
+        this.illuminazione = altra.illuminazione;
+        this.colore = altra.colore;
+        this.nome = altra.nome;
+        this.accesa = altra.accesa;
+    }
+
+    // GET e SET
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public int getPotenza() {
-        return potenza;
-    }
-
-    public void setPotenza(int potenza) {
-        this.potenza = potenza;
     }
 
     public String getColore() {
@@ -31,33 +41,33 @@ public class Lampadina {
         this.colore = colore;
     }
 
-    public int getIntensita() {
-        return intensita;
+    // Metodi funzionali
+    public void accendi() {
+        accesa = true;
     }
 
-    public void setIntensita(int intensita) {
-        this.intensita = intensita;
+    public void spegni() {
+        accesa = false;
     }
 
-    public boolean isAccesa() {
-        return accesa;
+    public void aumentaIlluminazione() {
+        if (illuminazione < 100) {
+            illuminazione += 10;
+            if (illuminazione > 100) illuminazione = 100;
+        }
     }
 
-    public void setAccesa(boolean accesa) {
-        this.accesa = accesa;
+    public void diminuisciIlluminazione() {
+        if (illuminazione > 0) {
+            illuminazione -= 10;
+            if (illuminazione < 0) illuminazione = 0;
+        }
     }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
 
     @Override
     public String toString() {
-        return super.toString();
+        String stato = accesa ? "accesa" : "spenta";
+        return "Nome: " + nome + ", Potenza: " + potenza + " watt, Stato: " + stato +
+                ", Qta: " + illuminazione + "%, Colore: " + colore;
     }
 }
