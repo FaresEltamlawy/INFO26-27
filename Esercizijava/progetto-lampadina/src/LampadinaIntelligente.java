@@ -1,12 +1,12 @@
 public class LampadinaIntelligente {
 
-    private int potenza;            // in Watt
-    private int illuminazione;      // 0 - 100
-    private String colore;          // es. "bianco"
-    private String nome;            // nome assegnato nel sistema
-    private boolean accesa;         // stato
+    private int potenza;
+    private int illuminazione;
+    private String colore;
+    private String nome;
+    private boolean accesa;
 
-    // Costruttore
+
     public LampadinaIntelligente(int potenza) {
         this.potenza = potenza;
         this.illuminazione = 50;
@@ -15,7 +15,7 @@ public class LampadinaIntelligente {
         this.accesa = false;
     }
 
-    // Costruttore di copia
+
     public LampadinaIntelligente(LampadinaIntelligente altra) {
         this.potenza = altra.potenza;
         this.illuminazione = altra.illuminazione;
@@ -24,7 +24,7 @@ public class LampadinaIntelligente {
         this.accesa = altra.accesa;
     }
 
-    // GET e SET
+
     public String getNome() {
         return nome;
     }
@@ -68,6 +68,6 @@ public class LampadinaIntelligente {
     public String toString() {
         String stato = accesa ? "accesa" : "spenta";
         return "Nome: " + nome + ", Potenza: " + potenza + " watt, Stato: " + stato +
-                ", Qta: " + illuminazione + "%, Colore: " + colore;
+                ", Luminosita: " + illuminazione + "%, Colore: " + colore;
     }
 }
