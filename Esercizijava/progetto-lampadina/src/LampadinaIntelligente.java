@@ -41,7 +41,7 @@ public class LampadinaIntelligente {
         this.colore = colore;
     }
 
-    // Metodi funzionali
+
     public void accendi() {
         accesa = true;
     }

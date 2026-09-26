@@ -7,7 +7,7 @@ public class MenuLampadina {
 
         System.out.print("Inserisci la potenza della lampadina: ");
         int potenza = input.nextInt();
-        input.nextLine(); // pulizia buffer
+        input.nextLine();
 
         LampadinaIntelligente lamp = new LampadinaIntelligente(potenza);
 
