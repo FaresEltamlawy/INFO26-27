@@ -10,7 +10,7 @@ public class Alunno {
     public Alunno() {
         this.nome = "";
         this.cognome = "";
-        this.eta = 0;
+        this.eta = 5;
         this.altezza = 0;
         this.peso = 0;
     }
