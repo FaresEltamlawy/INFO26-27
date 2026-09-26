@@ -51,7 +51,7 @@ public class Main {
 
                 case 2:
                     System.out.println("\nBMI Studente 1: " + a1.calcolaIndice());
-                    System.out.println("BMI Studente 2: " + a2.calcolaIndice());
+                    System.out.println("\nBMI Studente 2: " + a2.calcolaIndice());
                     break;
 
                 case 3:
