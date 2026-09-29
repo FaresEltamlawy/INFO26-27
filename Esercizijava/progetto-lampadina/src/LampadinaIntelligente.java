@@ -16,12 +16,12 @@ public class LampadinaIntelligente {
     }
 
 
-    public LampadinaIntelligente(LampadinaIntelligente altra) {
-        this.potenza = altra.potenza;
-        this.illuminazione = altra.illuminazione;
-        this.colore = altra.colore;
-        this.nome = altra.nome;
-        this.accesa = altra.accesa;
+    public LampadinaIntelligente(LampadinaIntelligente a) {
+        this.potenza = a.potenza;
+        this.illuminazione = a.illuminazione;
+        this.colore = a.colore;
+        this.nome = a.nome;
+        this.accesa = a.accesa;
     }
 
 
