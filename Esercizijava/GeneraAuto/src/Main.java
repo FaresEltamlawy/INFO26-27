@@ -11,7 +11,7 @@ public class Main {
         System.out.print("Inserisci il numero di cifre della parte numerica: ");
         int cifre = input.nextInt();
 
-        GeneratoreAuto gen = new GeneratoreAuto(prefisso, cifre);
+        GeneratoreAuto g = new GeneratoreAuto(prefisso, cifre);
 
         int scelta;
 
@@ -25,10 +25,10 @@ public class Main {
 
             switch (scelta) {
                 case 1:
-                    System.out.println("Nuovo codice: " + gen.genera());
+                    System.out.println("Nuovo codice: " + g.genera());
                     break;
                 case 2:
-                    System.out.println(gen.toString());
+                    System.out.println(g.toString());
                     break;
                 case 3:
                     break;
