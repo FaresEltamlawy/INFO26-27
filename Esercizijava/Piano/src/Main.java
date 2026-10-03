@@ -17,16 +17,7 @@ public class Main {
 
             switch (scelta) {
                 case 1:
-                    System.out.print("Inserisci x del punto A: ");
-                    double x1 = sc.nextDouble();
-                    System.out.print("Inserisci y del punto A: ");
-                    double y1 = sc.nextDouble();
-                    System.out.print("Inserisci x del punto B: ");
-                    double x2 = sc.nextDouble();
-                    System.out.print("Inserisci y del punto B: ");
-                    double y2 = sc.nextDouble();
-                    rettangolo = new Rettangolo(new Punto(x1, y1), new Punto(x2, y2));
-                    System.out.println("Rettangolo creato: " + rettangolo);
+                    rettangolo = CreaPunto(sc);
                     break;
 
                 case 2:
@@ -54,5 +45,20 @@ public class Main {
         } while (scelta != 4);
 
         sc.close();
+    }
+
+    private static Rettangolo CreaPunto(Scanner sc) {
+        Rettangolo rettangolo;
+        System.out.print("Inserisci x del punto A: ");
+        double x1 = sc.nextDouble();
+        System.out.print("Inserisci y del punto A: ");
+        double y1 = sc.nextDouble();
+        System.out.print("Inserisci x del punto B: ");
+        double x2 = sc.nextDouble();
+        System.out.print("Inserisci y del punto B: ");
+        double y2 = sc.nextDouble();
+        rettangolo = new Rettangolo(new Punto(x1, y1), new Punto(x2, y2));
+        System.out.println("Rettangolo creato: " + rettangolo);
+        return rettangolo;
     }
 }

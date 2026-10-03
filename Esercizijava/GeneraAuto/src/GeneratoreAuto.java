@@ -22,7 +22,7 @@ public class GeneratoreAuto {
             return "Codici esauriti";
         }
         ultimoValore++;
-        String parteNumerica = String.format("%0" + cifre + "d", ultimoValore);
+        String parteNumerica = String.format("%0" + cifre + "d" + ultimoValore);
         return prefisso + parteNumerica;
     }
 
