@@ -6,7 +6,6 @@ public class LampadinaIntelligente {
     private String nome;
     private boolean accesa;
 
-
     public LampadinaIntelligente(int potenza) {
         this.potenza = potenza;
         this.illuminazione = 50;
@@ -15,15 +14,13 @@ public class LampadinaIntelligente {
         this.accesa = false;
     }
 
-
-    public LampadinaIntelligente(LampadinaIntelligente altra) {
-        this.potenza = altra.potenza;
-        this.illuminazione = altra.illuminazione;
-        this.colore = altra.colore;
-        this.nome = altra.nome;
-        this.accesa = altra.accesa;
+    public LampadinaIntelligente(LampadinaIntelligente a) {
+        this.potenza = a.potenza;
+        this.illuminazione = a.illuminazione;
+        this.colore = a.colore;
+        this.nome = a.nome;
+        this.accesa = a.accesa;
     }
-
 
     public String getNome() {
         return nome;
@@ -41,7 +38,6 @@ public class LampadinaIntelligente {
         this.colore = colore;
     }
 
-
     public void accendi() {
         accesa = true;
     }
@@ -53,14 +49,18 @@ public class LampadinaIntelligente {
     public void aumentaIlluminazione() {
         if (illuminazione < 100) {
             illuminazione += 10;
-            if (illuminazione > 100) illuminazione = 100;
+            if (illuminazione > 100) {
+                illuminazione = 100;
+            }
         }
     }
 
     public void diminuisciIlluminazione() {
         if (illuminazione > 0) {
             illuminazione -= 10;
-            if (illuminazione < 0) illuminazione = 0;
+            if (illuminazione < 0) {
+                illuminazione = 0;
+            }
         }
     }
 
@@ -68,6 +68,6 @@ public class LampadinaIntelligente {
     public String toString() {
         String stato = accesa ? "accesa" : "spenta";
         return "Nome: " + nome + ", Potenza: " + potenza + " watt, Stato: " + stato +
-                ", Luminosita: " + illuminazione + "%, Colore: " + colore;
+                ", Qta: " + illuminazione + "%, Colore: " + colore;
     }
 }

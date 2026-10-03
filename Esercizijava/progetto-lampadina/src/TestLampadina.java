@@ -1,30 +1,26 @@
 public class TestLampadina {
-    public static void Main(String[] args) {
+    public static void main(String[] args) {
+        LampadinaIntelligente l1 = new LampadinaIntelligente(40);
+        l1.setNome("camera");
 
-        LampadinaIntelligente lamp = new LampadinaIntelligente(40);
-        lamp.setNome("camera");
+        System.out.println("--- Lampadina 1 ---");
+        System.out.println(l1);
 
-        System.out.println("Stato iniziale:");
-        System.out.println(lamp);
+        l1.accendi();
+        l1.aumentaIlluminazione();
+        l1.setColore("giallo");
+        System.out.println(l1);
 
-        lamp.accendi();
-        lamp.aumentaIlluminazione();
-        lamp.setColore("giallo");
+        LampadinaIntelligente l2 = new LampadinaIntelligente(l1);
+        System.out.println("Copia");
+        System.out.println(l2);
 
-        System.out.println("\nDopo alcune modifiche:");
-        System.out.println(lamp);
+        System.out.println("Nome della nuova lampadina: " + l2.getNome());
+        System.out.println("Colore della nuova lampadina: " + l2.getColore());
 
-        lamp.diminuisciIlluminazione();
-        lamp.spegni();
-
-        System.out.println("\nDopo altre modifiche:");
-        System.out.println(lamp);
-
-
-        LampadinaIntelligente copia = new LampadinaIntelligente(lamp);
-        copia.setNome("copia");
-
-        System.out.println("\nLampadina copiata:");
-        System.out.println(copia);
+        l1.spegni();
+        l1.diminuisciIlluminazione();
+        System.out.println("--- Lampadina 1 spenta ---");
+        System.out.println(l1);
     }
 }
