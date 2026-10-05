@@ -15,7 +15,7 @@ public class Main {
             System.out.println("4) Stop");
             System.out.println("5) Brano Successivo");
             System.out.println("6) Brano Precedente");
-            System.out.println("7) Stampa info Playlist (toString)");
+            System.out.println("7) Stampa info Playlist");
             System.out.println("8) Esci");
             System.out.print("Scelta: ");
 
