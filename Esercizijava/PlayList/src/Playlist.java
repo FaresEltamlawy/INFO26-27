@@ -1,63 +1,97 @@
 public class Playlist {
 
-    private String nomePL;
-    private int numeroCanzoni;
-    private boolean play = false;
+    private String nome;
+    private int numeroBrani;
+    private int branoCorrente;
 
+    private boolean inPlay;
+    private boolean inPausa;
+    private boolean inStop;
 
-    public Playlist(int numeroCanzoni, boolean play, String nomePL) {
-        this.numeroCanzoni = numeroCanzoni;
-        this.play = play;
-        this.nomePL = nomePL;
+    public Playlist(String nome, int numeroBrani) {
+        this.nome = nome;
+
+        if (numeroBrani > 0) {
+            this.numeroBrani = numeroBrani;
+        } else {
+            this.numeroBrani = 1;
+        }
+
+        this.branoCorrente = 1;
+
+        this.inPlay = false;
+        this.inPausa = false;
+        this.inStop = true;
     }
 
-    public Playlist(){
-
+    public Playlist(Playlist p) {
+        this.nome = p.nome;
+        this.numeroBrani = p.numeroBrani;
+        this.branoCorrente = p.branoCorrente;
+        this.inPlay = p.inPlay;
+        this.inPausa = p.inPausa;
+        this.inStop = p.inStop;
     }
 
-    public String getNomePL() {
-        return nomePL;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomePL(String nomePL) {
-        this.nomePL = nomePL;
+    public int getQuantiBrani() {
+        return numeroBrani;
     }
 
-    public int getNumeroCanzoni() {
-        return numeroCanzoni;
+    public void play() {
+        this.inPlay = true;
+        this.inPausa = false;
+        this.inStop = false;
     }
 
-    public void setNumeroCanzoni(int canzoni) {
-        this.numeroCanzoni = canzoni;
+    public void pause() {
+        if (this.inStop == false) {
+            this.inPlay = false;
+            this.inPausa = true;
+            this.inStop = false;
+        }
     }
 
+    public void stop() {
+        if (this.inStop == true) {
+            this.branoCorrente = 1;
+        }
 
-    public void Start() {
-        if (play = false) {
-            play = true;
-        } else
-            System.out.println("La playlist è già in produzione");
+        this.inPlay = false;
+        this.inPausa = false;
+        this.inStop = true;
     }
 
-
-
-    public void Stop(){
-        if (play = true){
-            play = false;
-            System.out.println("La playlist non è più in produzione");
-        }else
-            System.out.println("La playlist è già in stop");
-
+    public void branoSuccessivo() {
+        this.branoCorrente++;
+        if (this.branoCorrente > this.numeroBrani) {
+            this.branoCorrente = 1;
+        }
     }
 
-    public void Pause(){
-        if (play = true){
-            play =false;
-            System.out.println("La playlist ora è in pausa");
-        }else
-            System.out.println("La playlist è già in pausa");
+    public void branoPrecedente() {
+        this.branoCorrente--;
+        if (this.branoCorrente < 1) {
+            this.branoCorrente = this.numeroBrani;
+        }
     }
 
+    @Override
+    public String toString() {
+        String statoAttuale = "";
 
+        if (this.inPlay == true) {
+            statoAttuale = "PLAY";
+        } else if (this.inPausa == true) {
+            statoAttuale = "PAUSE";
+        } else if (this.inStop == true) {
+            statoAttuale = "STOP";
+        }
 
+        return "Playlist " + this.nome + ", " + this.numeroBrani +
+                " brani, in " + statoAttuale + " sul brano " + this.branoCorrente;
+    }
 }
