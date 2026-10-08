@@ -4,54 +4,72 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        Semaforo s = new Semaforo();
+        Incrocio incrocio = new Incrocio();
         int scelta;
 
         do {
-            System.out.println("\n--- MENU SEMAFORO ---");
-            System.out.println("1) Accendi");
-            System.out.println("2) Spegni");
-            System.out.println("3) Avanza colore");
-            System.out.println("4) Verifica se e' acceso e mostra colore");
-            System.out.println("5) Stampa stato semaforo");
+            System.out.println("\n--- MENU GESTIONE INCROCIO ---");
+            System.out.println("1) Accendi incrocio");
+            System.out.println("2) Spegni incrocio");
+            System.out.println("3) Avanza colore di un semaforo (N, S, E, O)");
+            System.out.println("4) Verifica se e' acceso e mostra colore di una strada");
+            System.out.println("5) Stampa stato e mappa dell'incrocio");
             System.out.println("6) Esci");
             System.out.print("Scelta: ");
 
             scelta = sc.nextInt();
 
-            switch(scelta) {
+            switch (scelta) {
                 case 1:
-                    s.accendi();
-                    System.out.println("Acceso.");
+                    incrocio.accendi();
+                    System.out.println("Incrocio acceso.");
                     break;
+
                 case 2:
-                    s.spegni();
-                    System.out.println("Spento.");
+                    incrocio.spegni();
+                    System.out.println("Incrocio spento.");
                     break;
+
                 case 3:
-                    s.avanza();
-                    System.out.println("Avanzato di colore.");
-                    break;
-                case 4:
-                    if (s.isAcceso() == true) {
-                        System.out.println("Il semaforo e' acceso.");
-                        System.out.println("Colore attuale: " + s.getColore());
+                    if (!incrocio.isAcceso()) {
+                        System.out.println("L'incrocio e' spento.");
                     } else {
-                        System.out.println("Il semaforo e' spento.");
+                        System.out.print("Inserisci la strada (N, S, E, O): ");
+                        char strada = sc.next().charAt(0);
+                        incrocio.avanza(strada);
                     }
                     break;
-                case 5:
-                    System.out.println(s.toString());
+
+                case 4:
+                    if (incrocio.isAcceso()) {
+                        System.out.println("L'incrocio e' ACCESO.");
+                        System.out.print("Inserisci la strada (N, S, E, O): ");
+                        char strada = sc.next().charAt(0);
+                        String colore = incrocio.getColore(strada);
+                        if (!colore.isEmpty()) {
+                            System.out.println("Colore semaforo " + Character.toUpperCase(strada) + ": " + colore);
+                        } else {
+                            System.out.println("Strada non valida.");
+                        }
+                    } else {
+                        System.out.println("L'incrocio e' SPENTO.");
+                    }
                     break;
+
+                case 5:
+                    System.out.println("\n" + incrocio.toString());
+                    break;
+
                 case 6:
                     System.out.println("Uscita in corso...");
                     break;
+
                 default:
                     System.out.println("Scelta non valida.");
                     break;
             }
 
-        } while(scelta != 6);
+        } while (scelta != 6);
 
         sc.close();
     }
