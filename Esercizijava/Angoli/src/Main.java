@@ -12,7 +12,7 @@ public class Main {
         return new Angoli(g, m, s);
     }
 
-    public static int Menu() {
+    public static int mostraMenu() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\n MENU GESTIONE ANGOLI ");
         System.out.println("1. Inserisci un nuovo angolo");
@@ -29,7 +29,7 @@ public class Main {
        int scelta;
 
         do {
-            scelta = Menu();
+            scelta = mostraMenu();
 
             switch (scelta) {
                 case 1:
@@ -60,7 +60,7 @@ public class Main {
                     System.out.println("Alla prossima vez");
                     break;
                 default:
-                    System.out.println("Opzione non valida. Riprova.");
+                    System.out.println("Vez l'opzione che hai scelto non la puoi fare(s).");
             }
         } while (scelta != 0);
     }
