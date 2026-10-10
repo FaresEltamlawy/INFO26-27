@@ -34,11 +34,11 @@ public class Main {
             switch (scelta) {
                 case 1:
                     angoloCorrente = creaAngolo();
-                    System.out.println("Angolo memorizzato: " + angoloCorrente);
+                    System.out.println("Angolo salvato: " + angoloCorrente);
                     break;
                 case 2:
                     if (angoloCorrente == null) {
-                        System.out.println("Prima devi creare un angolo principale (Opzione 1).");
+                        System.out.println("Prima devi creare un angolo (Opzione 1).");
                     } else {
                         System.out.println("Inserisci l'angolo da SOMMARE:");
                         Angoli angoloDaSommare = creaAngolo();
@@ -48,7 +48,7 @@ public class Main {
                     break;
                 case 3:
                     if (angoloCorrente == null) {
-                        System.out.println("Prima devi creare un angolo principale (Opzione 1).");
+                        System.out.println("Prima devi creare un angolo (Opzione 1).");
                     } else {
                         System.out.println("Inserisci l'angolo da SOTTRARRE:");
                         Angoli angoloDaSottrarre = creaAngolo();
@@ -57,7 +57,7 @@ public class Main {
                     }
                     break;
                 case 0:
-                    System.out.println("Chiusura del programma...");
+                    System.out.println("Alla prossima vez");
                     break;
                 default:
                     System.out.println("Opzione non valida. Riprova.");
