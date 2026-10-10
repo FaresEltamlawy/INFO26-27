@@ -12,7 +12,7 @@ public class Main {
         return new Angoli(g, m, s);
     }
 
-    public static int mostraMenu() {
+    public static int Menu() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\n MENU GESTIONE ANGOLI ");
         System.out.println("1. Inserisci un nuovo angolo");
@@ -29,7 +29,7 @@ public class Main {
        int scelta;
 
         do {
-            scelta = mostraMenu();
+            scelta = Menu();
 
             switch (scelta) {
                 case 1:
