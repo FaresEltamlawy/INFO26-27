@@ -12,17 +12,17 @@ public class Angoli {
     }
 
     private void semplifica(){
-        int ST = this.gradi * 3600 + this.minuti * 60 + this.secondi;
+        int seconditot = this.gradi * 3600 + this.minuti * 60 + this.secondi;
         int unGiro = 360 * 3600;
 
-        ST = ST % unGiro;
-        if (ST < 0){
-            ST += unGiro;
+        seconditot = seconditot % unGiro;
+        if (seconditot < 0){
+            seconditot += unGiro;
         }
-        this.gradi = ST / 3600;
-        ST %= 3600;
-        this.minuti = ST / 60;
-        this.secondi = ST % 60;
+        this.gradi = seconditot / 3600;
+        seconditot %= 3600;
+        this.minuti = seconditot / 60;
+        this.secondi = seconditot % 60;
     }
 
     public Angoli sommaAngoli(Angoli a){
