@@ -7,6 +7,7 @@ public class es4 {
         System.out.print("Inserisci una stringa: ");
         String testo = scanner.nextLine();
 
+
         String risultato = "";
 
         for (int i = 0; i < testo.length(); i++) {
